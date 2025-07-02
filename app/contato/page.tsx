@@ -30,9 +30,10 @@ export default function ContatoPage() {
         const result = await response.json();
         setFeedback({ type: 'error', message: result.error || 'Ocorreu um erro. Tente novamente.' });
       }
-    } catch (_err) { // <-- A CORREÇÃO ESTÁ AQUI: 'err' foi renomeado para '_err'.
-      setFeedback({ type: 'error', message: 'Falha na comunicação com o servidor. Verifique sua conexão.' });
-    }
+   } catch (err) { 
+  console.error("Erro ao tentar enviar o formulário:", err); 
+  setFeedback({ type: 'error', message: 'Falha na comunicação com o servidor. Verifique sua conexão.' });
+}
   };
 
   return (
