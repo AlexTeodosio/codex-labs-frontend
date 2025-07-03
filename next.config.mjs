@@ -6,6 +6,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+   basePath: '/codex-labs-frontend',
 };
 
 export default nextConfig;
